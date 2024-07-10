@@ -51,10 +51,9 @@ console.log(humanValue);
 
 
 
-
 //Get a value rock, paper or scissor
 //Save that value
-//Use that value to prompt the choice
+//return that value 
 
 function playRound (humanChoice, computerChoice) {
     
