@@ -1,13 +1,26 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice(value) {
-    return Math.random(value);
+function getComputerChoice() {
+    //return Math.random(value);
+    let randomNumber = Math.random();
+
+    if (randomNumber <= 0.33) {
+        return 'Rock';
+    }
+    else if (randomNumber >= 0.34 && randomNumber <= 0.66) {
+        return 'Paper'
+    }
+    else {
+        return 'Scissor';
+    }
     
 }
 //Generate a random number between 0-1
+let computerValue = getComputerChoice();
+console.log(computerValue);
 
-let x = getComputerChoice();
+/*let x = getComputerChoice();
 if (x <= 0.33) {
     console.log("Rock!");
 }
@@ -17,7 +30,7 @@ else if (x >= 0.34 && x <= 0.66) {
 else {
     console.log("Scissor!");
 }
-console.log(x);
+console.log(x);*/
 
 //if number is 0.33 or less give rock
 //If number is betwwen 0.34 and 0.66 give paper
@@ -52,7 +65,8 @@ function playRound (humanChoice, computerChoice) {
     
 }
 
-playRound (y, x);
+//playRound (y, x);
+
 //get human value and computer value
 //Rock rock
 //paper paper
