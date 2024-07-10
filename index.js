@@ -2,7 +2,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    //return Math.random(value);
+
     let randomNumber = Math.random();
 
     if (randomNumber <= 0.33) {
@@ -16,21 +16,9 @@ function getComputerChoice() {
     }
     
 }
-//Generate a random number between 0-1
+
 let computerValue = getComputerChoice();
 console.log(computerValue);
-
-/*let x = getComputerChoice();
-if (x <= 0.33) {
-    console.log("Rock!");
-}
-else if (x >= 0.34 && x <= 0.66) {
-    console.log("Paper!");
-}
-else {
-    console.log("Scissor!");
-}
-console.log(x);*/
 
 //if number is 0.33 or less give rock
 //If number is betwwen 0.34 and 0.66 give paper
@@ -38,24 +26,31 @@ console.log(x);*/
 
 function getHumanChoice() {
     let choice = window.prompt('Choose "Rock", "Paper" or "Scissor"');
-    return choice;
+    if (choice === 'Rock') {
+        console.log('R');
+        return 'Rock';
+        
+    }
+    else if (choice === 'Paper') {
+        console.log('P');
+        return 'Paper';
+    }
+    else if (choice === 'Scissor') {
+        console.log('S');
+        return 'Scissor';
+    }
+    /*else {
+        console.log('invalid');
+        getHumanChoice();
+    }*/
+    
 }
 
-let y = getHumanChoice();
+let humanValue = getHumanChoice();
+console.log(humanValue);
 
-if (y === 'Rock') {
-    console.log('hRock');
-}
-else if (y === 'Paper') {
-    console.log('hPaper');
-}
-else if (y === 'Scissor') {
-    console.log('hScissor');
-}
-else {
-    console.log('Invalid Choice, try again');
 
-}
+
 
 //Get a value rock, paper or scissor
 //Save that value
