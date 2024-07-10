@@ -1,3 +1,5 @@
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(value) {
     return Math.random(value);
@@ -45,3 +47,14 @@ else {
 //Get a value rock, paper or scissor
 //Save that value
 //Use that value to prompt the choice
+
+function playRound (humanChoice, computerChoice) {
+    
+}
+
+playRound (y, x);
+//get human value and computer value
+//Rock rock
+//paper paper
+//scissor scissor
+//rock paper
