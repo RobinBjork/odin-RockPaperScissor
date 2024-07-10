@@ -27,11 +27,19 @@ function getHumanChoice() {
 }
 
 let y = getHumanChoice();
-if (y = 'Rock') {
+
+if (y === 'Rock') {
     console.log('hRock');
 }
-else if (y = 'Paper') {
+else if (y === 'Paper') {
     console.log('hPaper');
+}
+else if (y === 'Scissor') {
+    console.log('hScissor');
+}
+else {
+    console.log('Invalid Choice, try again');
+
 }
 
 //Get a value rock, paper or scissor
