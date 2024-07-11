@@ -26,17 +26,14 @@ console.log(computerValue);
 
 function getHumanChoice() {
     let choice = window.prompt('Choose "Rock", "Paper" or "Scissor"');
-    if (choice === 'Rock') {
-        console.log('R');
-        return 'Rock';
-        
+    let convertedChoice = choice.toLowerCase();
+    if (convertedChoice === 'rock') {
+        return 'Rock'; 
     }
-    else if (choice === 'Paper') {
-        console.log('P');
+    else if (convertedChoice === 'paper') {
         return 'Paper';
     }
-    else if (choice === 'Scissor') {
-        console.log('S');
+    else if (convertedChoice === 'scissor') {
         return 'Scissor';
     }
     /*else {
@@ -56,13 +53,20 @@ console.log(humanValue);
 //return that value 
 
 function playRound (humanChoice, computerChoice) {
+    if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
+        humanScore++;
+        console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+        console.log('Human ' + humanScore);
+        console.log('Computer ' + computerScore);
+    }
     
 }
 
-//playRound (y, x);
+playRound(humanValue, computerValue);
 
-//get human value and computer value
-//Rock rock
-//paper paper
-//scissor scissor
-//rock paper
+
+//om human är rock och computer är scissor, poäng till human
+//om human är paper och computer är rock, poäng till human
+//om human är scissor och computer är paper, poäng till human
+//Om humanvalue är samma som computer value, kör igen
+//Annars, poäng till computer
