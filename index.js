@@ -32,7 +32,8 @@ function getHumanChoice() {
         return 'Scissor';
     }
     else {
-        console.log('invalid');
+        console.log('Invalid choice. Choose "Rock", "Paper" or "Scissor"');
+        console.log('-----');
         getHumanChoice();
     }
     
@@ -43,23 +44,11 @@ function getHumanChoice() {
 //Save that value
 //return that value 
 
-
-
-
-
-
-//om human är rock och computer är scissor, poäng till human
-//om human är paper och computer är rock, poäng till human
-//om human är scissor och computer är paper, poäng till human
-//Om humanvalue är samma som computer value, kör igen
-//Annars, poäng till computer
     let humanScore = 0;
     let computerScore = 0;
 
 function playGame () {
  
-    
-
     if (humanScore === 5) {
         console.log('You won, well done!');
     }
@@ -68,9 +57,7 @@ function playGame () {
     }
     else {
         let computerValue = getComputerChoice();
-        console.log(computerValue);
         let humanValue = getHumanChoice();
-        console.log(humanValue);
         playRound(humanValue, computerValue);
     }
 
@@ -85,52 +72,54 @@ function playGame () {
 
             if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
                 humanScore++;
-                console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+                console.log('You get a point. ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
-
+                console.log('-----');
                 playGame();
                 
             }
             else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
                 humanScore++;
-                console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+                console.log('You get a point. ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
-                
+                console.log('-----');
                 playGame();
                 
             }
             else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
                 humanScore++;
-                console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+                console.log('You get a point. ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
-
+                console.log('-----');
                 playGame();
                
             }
             else if (humanChoice === computerChoice) {
-                console.log('Tie!');
+                console.log('Tie! ' + humanChoice + ' clashes against ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
-
+                console.log('-----');
                 playGame();
             }
             else {
                 computerScore++;
-                console.log('You loose! ' + humanChoice + ' looses to ' + computerChoice);
+                console.log('Opponent get a point. ' + humanChoice + ' looses to ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
-
+                console.log('-----');
                 playGame();
             }
+
+//om human är rock och computer är scissor, poäng till human
+//om human är paper och computer är rock, poäng till human
+//om human är scissor och computer är paper, poäng till human
+//Om humanvalue är samma som computer value, kör igen
+//Annars, poäng till computer
             
         }
 }
 
 playGame();
-
-//om humanscore eller computerscore är mindre än 5, spela
-//om humanscore = 5, sluta spela
-//Annars sluta spela
