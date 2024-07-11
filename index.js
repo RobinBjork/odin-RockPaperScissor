@@ -58,10 +58,7 @@ function getHumanChoice() {
 
 function playGame () {
  
-    let computerValue = getComputerChoice();
-    console.log(computerValue);
-    let humanValue = getHumanChoice();
-    console.log(humanValue);
+    
 
     if (humanScore === 5) {
         console.log('You won, well done!');
@@ -70,6 +67,10 @@ function playGame () {
         console.log('You loose, too bad!');
     }
     else {
+        let computerValue = getComputerChoice();
+        console.log(computerValue);
+        let humanValue = getHumanChoice();
+        console.log(humanValue);
         playRound(humanValue, computerValue);
     }
 
