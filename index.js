@@ -63,17 +63,20 @@ function playGame () {
     let humanValue = getHumanChoice();
     console.log(humanValue);
 
-    if (humanScore < 4 && computerScore < 4) {
-        playRound(humanValue, computerValue)
-                  
-    }
-    else if (humanScore = 5) {
+    if (humanScore === 5) {
         console.log('You won, well done!');
     }
-    else if (computerScore = 5){
-        console.log('You loose, too bad!')
+    else if (computerScore === 5) {
+        console.log('You loose, too bad!');
     }
-    
+    else {
+        playRound(humanValue, computerValue);
+    }
+
+//Om human är 5, vinn
+//Om computer är 5, förlora
+//Annars spela på    
+
 
         function playRound (humanChoice, computerChoice) {
 
@@ -93,7 +96,6 @@ function playGame () {
                 console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
-
                 
                 playGame();
                 
