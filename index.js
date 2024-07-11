@@ -27,6 +27,7 @@ console.log(computerValue);
 function getHumanChoice() {
     let choice = window.prompt('Choose "Rock", "Paper" or "Scissor"');
     let convertedChoice = choice.toLowerCase();
+
     if (convertedChoice === 'rock') {
         return 'Rock'; 
     }
@@ -56,6 +57,29 @@ function playRound (humanChoice, computerChoice) {
     if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
         humanScore++;
         console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+        console.log('Human ' + humanScore);
+        console.log('Computer ' + computerScore);
+    }
+    else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
+        humanScore++;
+        console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+        console.log('Human ' + humanScore);
+        console.log('Computer ' + computerScore);
+    }
+    else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
+        humanScore++;
+        console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+        console.log('Human ' + humanScore);
+        console.log('Computer ' + computerScore);
+    }
+    else if (humanChoice === computerChoice) {
+        console.log('Tie!');
+        console.log('Human ' + humanScore);
+        console.log('Computer ' + computerScore);
+    }
+    else {
+        computerScore++;
+        console.log('You loose! ' + humanChoice + ' looses to ' + computerChoice);
         console.log('Human ' + humanScore);
         console.log('Computer ' + computerScore);
     }
