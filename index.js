@@ -1,5 +1,3 @@
-
-
 function getComputerChoice() {
     
     let randomNumber = Math.random();
@@ -15,9 +13,6 @@ function getComputerChoice() {
     }
     
 }
-
-let computerValue = getComputerChoice();
-console.log(computerValue);
 
 //if number is 0.33 or less give rock
 //If number is betwwen 0.34 and 0.66 give paper
@@ -43,10 +38,6 @@ function getHumanChoice() {
     
 }
 
-let humanValue = getHumanChoice();
-console.log(humanValue);
-
-
 
 //Get a value rock, paper or scissor
 //Save that value
@@ -67,6 +58,10 @@ console.log(humanValue);
 
 function playGame () {
  
+    let computerValue = getComputerChoice();
+    console.log(computerValue);
+    let humanValue = getHumanChoice();
+    console.log(humanValue);
 
     if (humanScore < 4 && computerScore < 4) {
         playRound(humanValue, computerValue)
@@ -75,20 +70,21 @@ function playGame () {
     else if (humanScore = 5) {
         console.log('You won, well done!');
     }
-    else {
+    else if (computerScore = 5){
         console.log('You loose, too bad!')
     }
     
 
         function playRound (humanChoice, computerChoice) {
+
+            
+
             if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
                 humanScore++;
                 console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
 
-                getComputerChoice();
-                getHumanChoice();
                 playGame();
                 
             }
@@ -97,6 +93,9 @@ function playGame () {
                 console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
+
+                
+                playGame();
                 
             }
             else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
@@ -104,18 +103,24 @@ function playGame () {
                 console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
+
+                playGame();
                
             }
             else if (humanChoice === computerChoice) {
                 console.log('Tie!');
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
+
+                playGame();
             }
             else {
                 computerScore++;
                 console.log('You loose! ' + humanChoice + ' looses to ' + computerChoice);
                 console.log('Human ' + humanScore);
                 console.log('Computer ' + computerScore);
+
+                playGame();
             }
             
         }
