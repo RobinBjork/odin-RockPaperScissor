@@ -1,10 +1,9 @@
-let humanScore = 0;
-let computerScore = 0;
+
 
 function getComputerChoice() {
-
+    
     let randomNumber = Math.random();
-
+   
     if (randomNumber <= 0.33) {
         return 'Rock';
     }
@@ -37,10 +36,10 @@ function getHumanChoice() {
     else if (convertedChoice === 'scissor') {
         return 'Scissor';
     }
-    /*else {
+    else {
         console.log('invalid');
         getHumanChoice();
-    }*/
+    }
     
 }
 
@@ -63,44 +62,66 @@ console.log(humanValue);
 //om human är scissor och computer är paper, poäng till human
 //Om humanvalue är samma som computer value, kör igen
 //Annars, poäng till computer
+    let humanScore = 0;
+    let computerScore = 0;
 
 function playGame () {
+ 
 
-    function playRound (humanChoice, computerChoice) {
-        if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
-            humanScore++;
-            console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
-            console.log('Human ' + humanScore);
-            console.log('Computer ' + computerScore);
-        }
-        else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
-            humanScore++;
-            console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
-            console.log('Human ' + humanScore);
-            console.log('Computer ' + computerScore);
-        }
-        else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
-            humanScore++;
-            console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
-            console.log('Human ' + humanScore);
-            console.log('Computer ' + computerScore);
-        }
-        else if (humanChoice === computerChoice) {
-            console.log('Tie!');
-            console.log('Human ' + humanScore);
-            console.log('Computer ' + computerScore);
-        }
-        else {
-            computerScore++;
-            console.log('You loose! ' + humanChoice + ' looses to ' + computerChoice);
-            console.log('Human ' + humanScore);
-            console.log('Computer ' + computerScore);
-        }
-        
+    if (humanScore < 4 && computerScore < 4) {
+        playRound(humanValue, computerValue)
+                  
     }
+    else if (humanScore = 5) {
+        console.log('You won, well done!');
+    }
+    else {
+        console.log('You loose, too bad!')
+    }
+    
+
+        function playRound (humanChoice, computerChoice) {
+            if (humanChoice === 'Rock' && computerChoice === 'Scissor') {
+                humanScore++;
+                console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+                console.log('Human ' + humanScore);
+                console.log('Computer ' + computerScore);
+
+                getComputerChoice();
+                getHumanChoice();
+                playGame();
+                
+            }
+            else if (humanChoice === 'Paper' && computerChoice === 'Rock') {
+                humanScore++;
+                console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+                console.log('Human ' + humanScore);
+                console.log('Computer ' + computerScore);
+                
+            }
+            else if (humanChoice === 'Scissor' && computerChoice === 'Paper') {
+                humanScore++;
+                console.log('You win! ' + humanChoice + ' beats ' + computerChoice);
+                console.log('Human ' + humanScore);
+                console.log('Computer ' + computerScore);
+               
+            }
+            else if (humanChoice === computerChoice) {
+                console.log('Tie!');
+                console.log('Human ' + humanScore);
+                console.log('Computer ' + computerScore);
+            }
+            else {
+                computerScore++;
+                console.log('You loose! ' + humanChoice + ' looses to ' + computerChoice);
+                console.log('Human ' + humanScore);
+                console.log('Computer ' + computerScore);
+            }
+            
+        }
 }
 
-playGame(humanValue, computerValue);
+playGame();
 
 //om humanscore eller computerscore är mindre än 5, spela
 //om humanscore = 5, sluta spela
